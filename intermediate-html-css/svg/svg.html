@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando Modelar SVGs</title>
+
+    <style>
+        .name-box rect {
+            fill: black;
+            opacity: 0.54;
+        }
+
+        .name-box text {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            fill: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Esse é um testes com svg e xml</h1>
+    <!-- fill é a propriedade que edita a cor do svg (currentColor vai a cor padrão para texto da página)-->
+    <!-- O width e height do svg é o tamanho ao qual o navegador vai exibir.
+     Se o desenho interno for menor, o navegado vai estica-lo, ajustando as proporções -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="red" class="bi bi-1-circle"
+        viewBox="0 0 16 16">
+        <!-- viewBox="min-x min-y largura altura" é tipo de plano cartesiano do desenho svg, eu defino com height e weight o quanto consigo ver dele
+        mas daí com o min-x e min-y eu posso indicar em qual posição do plano eu começo a olhar. O desenho ainda existe fora do meu "binóculo", mas só consigo ver a partir daquele ponto-->
+        <path
+            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383z" />
+    </svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="220" height="100" viewBox="0 0 200 100" class="name-box">
+        <!-- Retângulo -->
+        <rect x="10" y="10" width="190" height="100" fill="lightblue" stroke="black" stroke-width="2" />
+
+        <!-- Texto dentro do retângulo -->
+        <text x="100" y="55" font-size="20" text-anchor="middle" fill="black">
+            Pedro
+        </text>
+    </svg>
+
+    <!-- → width/height = tamanho real do SVG na tela (a moldura)
+
+viewBox → mapa interno onde você desenha (a pintura em sim, pode ser relativamente menor que a moldura, mas o desenho só existe lá dentro)
+
+viewBox ≠ pixels → é um sistema próprio de coordenadas
+
+O navegador encaixa o “mundo interno” dentro da “janela externa”, sem perder qualidade, pois é vetorial
+
+Quando minX e minY são maiores que o tamanho real do desenho,
+o viewBox está enquadrando uma área onde não existe nada.
+
+Por isso “corta”.
+
+minX / minY = PARA ONDE OLHA
+width / height = QUANTO MOSTRA
+Se olhar para fora → corta.
+-->
+</body>
+
+</html>
