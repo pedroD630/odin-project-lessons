@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default CSS Style</title>
+    <style>
+        /*o navegador aplica estilo por padrão nas páginas html
+        - exemplo: quando você coloca um elemento <a> com um  link o browser o torna azul
+        user-agent stylesheets => garante um estilo básico para páginas sem css
+        
+        Objetivo: não ter interferência do css padrão e evitar estilos diferentes entre os browsers
+        Você pode: ou escrever seu próprio css, o seu css tem prioridade acima do user-agent
+        OU: fazer um css reset
+        Resets são algo de decisão de cada desenvolvedor, você pode decidir qual tipo de reset usar
+
+        Exemplo do reset mais popular: Meyer reset
+        */
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* bem popular 
+        https://necolas.github.io/normalize.css/
+        uma  biblioteca, a ser instalada, que não se define somente como reset, mas como toda uma biblioteca para redefinir as divergências entre browsers
+
+        a discussão sempre surge, porque não criar seu próprio css antes de remover o estilo de tudo?
+        nem toda ferramenta que existe vai se aplicar ao seu código
+        
+        https://mattbrictson.com/blog/css-normalize-and-reset*/
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
